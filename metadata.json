@@ -1,0 +1,6 @@
+{
+  "name": "Kabadiwala Bhopal",
+  "description": "Doorstep scrap collection and scrap buying service in Bhopal, MP. Fast, trustworthy household, office, and commercial scrap pickup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

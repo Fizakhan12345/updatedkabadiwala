@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" width="280" height="56" fill="none">
+  <!-- ICON GROUP (LEFT) -->
+  <g transform="translate(4, 4)">
+    <!-- Outer Circular Recycling Flow -->
+    <circle cx="24" cy="24" r="23" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.3"/>
+    
+    <!-- Recycling Arrow 1 -->
+    <path d="M24 3 A21 21 0 0 1 42 16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="44,20 38,15 44,12" fill="#FFFFFF"/>
+
+    <!-- Recycling Arrow 2 -->
+    <path d="M42 32 A21 21 0 0 1 12 40" stroke="#C6A15B" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="8,37 13,42 15,35" fill="#C6A15B"/>
+
+    <!-- Recycling Arrow 3 -->
+    <path d="M6 24 A21 21 0 0 1 18 5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="20,1 19,8 25,5" fill="#FFFFFF"/>
+
+    <!-- Center Emblem Badge -->
+    <circle cx="24" cy="24" r="14" fill="#FFFFFF"/>
+
+    <!-- Weighing Scale + Scrap Icon inside emblem -->
+    <path d="M15 21 H33" stroke="#163A5F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M24 16 V28 M20 29 H28" stroke="#C6A15B" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="24,18 22,21 26,21" fill="#163A5F"/>
+    
+    <path d="M16 21 L13 26 M16 21 L19 26 M12 26 H20" stroke="#163A5F" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M32 21 L29 26 M32 21 L35 26 M28 26 H36" stroke="#163A5F" stroke-width="1.2" stroke-linecap="round"/>
+    
+    <rect x="14" y="27" width="5" height="3" rx="0.5" fill="#C6A15B"/>
+    <rect x="29" y="27" width="5" height="3" rx="0.5" fill="#C6A15B"/>
+  </g>
+
+  <!-- TYPOGRAPHY GROUP (RIGHT) -->
+  <text x="62" y="26" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" letter-spacing="-0.02em" fill="#FFFFFF">Kabadiwala Bhopal</text>
+  <text x="62" y="43" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.03em" fill="#C6A15B">Har Kabad Ki Asli Keemat</text>
+</svg>

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #244E70;
+    --secondary: #3B6B8C;
+    --accent-coral: #E56B4F;
+    --accent-coral-dark: #D4583C;
+    --accent-mustard: #E9B949;
+    --bg-ivory: #F7F5F0;
+    --card-bg: #FFFFFF;
+    --text-dark: #1F2933;
+    --text-muted: #66737D;
+    --border-color: #E4E0D8;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--text-dark);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8C2B8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B6B8C;
+}
+
+/* Custom Color Classes for New Palette */
+.bg-ivory { background-color: #F7F5F0; }
+.bg-steel-blue { background-color: #244E70; }
+.bg-steel-muted { background-color: #3B6B8C; }
+.bg-warm-coral { background-color: #E56B4F; }
+.hover\:bg-warm-coral-dark:hover { background-color: #D4583C; }
+.bg-soft-mustard { background-color: #E9B949; }
+
+.text-steel-blue { color: #244E70; }
+.text-steel-muted { color: #3B6B8C; }
+.text-warm-coral { color: #E56B4F; }
+.text-soft-mustard { color: #E9B949; }
+.text-dark-slate { color: #1F2933; }
+.text-secondary-slate { color: #66737D; }
+
+.border-warm-ivory { border-color: #E4E0D8; }
+.border-steel-blue { border-color: #244E70; }
+.border-steel-muted { border-color: #3B6B8C; }
+.border-warm-coral { border-color: #E56B4F; }
+
+/* Accessible focus outline */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #E56B4F;
+  outline-offset: 2px;
+}
+
