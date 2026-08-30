@@ -189,7 +189,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'We cover all residential sectors of Shahpura including Sector A, B, and C.'
       }
     ],
-    neighborSlugs: ['kabadiwala-arera-colony-bhopal', 'kabadiwala-kolar-road-bhopal', 'kabadiwala-gulmohar-bhopal']
+    neighborSlugs: ['kabadiwala-arera-colony-bhopal', 'kabadiwala-kolar-road-bhopal', 'kabadiwala-gulmohar-bhopal', 'kabadiwala-new-market-bhopal']
   },
   {
     slug: 'kabadiwala-ayodhya-nagar-bhopal',
@@ -212,7 +212,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we service housing blocks, apartments, and independent homes throughout Ayodhya Nagar.'
       }
     ],
-    neighborSlugs: ['kabadiwala-govindpura-industrial-area-bhopal', 'kabadiwala-karond-bhopal']
+    neighborSlugs: ['kabadiwala-govindpura-industrial-area-bhopal', 'kabadiwala-karond-bhopal', 'kabadiwala-piplani-bhopal', 'kabadiwala-awadhpuri-bhopal', 'kabadiwala-bawadiya-kalan-bhopal']
   },
   {
     slug: 'kabadiwala-govindpura-industrial-area-bhopal',
@@ -240,7 +240,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we specialize in bulk industrial scrap buying, including heavy machinery, structural iron, copper, and factory offcuts.'
       }
     ],
-    neighborSlugs: ['kabadiwala-ayodhya-nagar-bhopal', 'kabadiwala-bagh-sewania-bhopal']
+    neighborSlugs: ['kabadiwala-ayodhya-nagar-bhopal', 'kabadiwala-bagh-sewania-bhopal', 'kabadiwala-piplani-bhopal', 'kabadiwala-mandideep-industrial-area-bhopal']
   },
   {
     slug: 'kabadiwala-bagh-sewania-bhopal',
@@ -290,7 +290,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we provide full coverage for mega residential townships and commercial plazas along Hoshangabad Road.'
       }
     ],
-    neighborSlugs: ['kabadiwala-bagh-sewania-bhopal', 'kabadiwala-mp-nagar-bhopal']
+    neighborSlugs: ['kabadiwala-bagh-sewania-bhopal', 'kabadiwala-mp-nagar-bhopal', 'kabadiwala-indrapuri-bhopal', 'kabadiwala-bawadiya-kalan-bhopal']
   },
   {
     slug: 'kabadiwala-chowk-bazaar-bhopal',
@@ -566,7 +566,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, weekend doorstep pickups can be scheduled easily in Kamla Park.'
       }
     ],
-    neighborSlugs: ['kabadiwala-koh-e-fiza-bhopal', 'kabadiwala-lakherapura-bhopal']
+    neighborSlugs: ['kabadiwala-koh-e-fiza-bhopal', 'kabadiwala-lakherapura-bhopal', 'kabadiwala-tt-nagar-bhopal']
   },
   {
     slug: 'kabadiwala-jinsi-bhopal',
@@ -589,7 +589,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we buy garage metal scrap, iron offcuts, and copper wiring from workshops in Jinsi.'
       }
     ],
-    neighborSlugs: ['kabadiwala-jehangirabad-bhopal', 'kabadiwala-ghoda-nakkas-bhopal']
+    neighborSlugs: ['kabadiwala-jehangirabad-bhopal', 'kabadiwala-ghoda-nakkas-bhopal', 'kabadiwala-ashoka-garden-bhopal']
   },
   {
     slug: 'kabadiwala-moti-masjid-bhopal',
@@ -736,7 +736,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, Nariyalkheda is in our primary local zone, allowing prompt doorstep pickup.'
       }
     ],
-    neighborSlugs: ['kabadiwala-karond-bhopal', 'kabadiwala-shahjahanabad-bhopal']
+    neighborSlugs: ['kabadiwala-karond-bhopal', 'kabadiwala-shahjahanabad-bhopal', 'kabadiwala-housing-board-colony-bhopal', 'kabadiwala-pgbt-college-bhopal']
   },
   {
     slug: 'kabadiwala-karond-bhopal',
@@ -764,7 +764,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we buy bulk packaging cartons, paper scrap, and wooden/metal waste from Karond market traders.'
       }
     ],
-    neighborSlugs: ['kabadiwala-nariyal-kheda-bhopal', 'kabadiwala-ayodhya-nagar-bhopal']
+    neighborSlugs: ['kabadiwala-nariyal-kheda-bhopal', 'kabadiwala-ayodhya-nagar-bhopal', 'kabadiwala-housing-board-colony-bhopal', 'kabadiwala-pgbt-college-bhopal', 'kabadiwala-awadhpuri-bhopal']
   },
   {
     slug: 'kabadiwala-jehangirabad-bhopal',
@@ -787,7 +787,7 @@ export const LOCALITIES: Locality[] = [
         answer: 'Yes, we provide full doorstep pickup coverage across Jahangirabad.'
       }
     ],
-    neighborSlugs: ['kabadiwala-jinsi-bhopal', 'kabadiwala-sultania-road-bhopal']
+    neighborSlugs: ['kabadiwala-jinsi-bhopal', 'kabadiwala-sultania-road-bhopal', 'kabadiwala-ashoka-garden-bhopal']
   },
   {
     slug: 'kabadiwala-sultania-road-bhopal',
@@ -834,5 +834,273 @@ export const LOCALITIES: Locality[] = [
       }
     ],
     neighborSlugs: ['kabadiwala-itwara-bhopal', 'kabadiwala-chowk-bazaar-bhopal']
+  },
+  {
+    slug: 'kabadiwala-pgbt-college-bhopal',
+    path: '/kabadiwala-pgbt-college-bhopal/',
+    name: 'PGBT College Road',
+    zoneCategory: 'Suburban & Housing Corridor',
+    shortDesc: 'Doorstep scrap pickup for hostels, PGs, and homes around PGBT College Road, Bhopal.',
+    detailedContent: {
+      intro: 'Kabadiwala Bhopal offers quick doorstep scrap collection for students, PG owners, and residents around PGBT College Road, Bhopal. We buy old books, hostel furniture, and household scrap.',
+      localityProfile: 'The PGBT College Road belt is a busy student and residential corridor with hostels, paying-guest accommodations, and nearby housing colonies. Our team is used to coordinating with hostel wardens and PG owners for bulk clearance.',
+      primaryScrapFocus: [
+        'Old Textbooks, Notebooks & Study Material',
+        'Hostel Furniture: Cots, Tables & Steel Almirahs',
+        'Discarded Fans, Coolers & Small Appliances',
+        'Household Raddi, Cartons & Plastic Scrap'
+      ],
+      pickupProcessText: 'Students, PG owners, and residents near PGBT College Road can call or WhatsApp to book a pickup slot; our team weighs and clears scrap right at the gate.',
+      landmarksServed: ['PGBT College Road', 'Nearby Hostel & PG Belt', 'Housing Board Colony Link', 'Nariyalkheda Boundary']
+    },
+    metaTitle: 'Kabadiwala PGBT College Road Bhopal | Scrap Buyer near PGBT College Bhopal',
+    metaDescription: 'Looking for Kabadiwala PGBT College Road Bhopal? Get convenient scrap collection and doorstep pickup service for homes, hostels, and PGs.',
+    faqs: [
+      {
+        question: 'Do you collect old books and hostel scrap near PGBT College Road?',
+        answer: 'Yes, we regularly collect old textbooks, notebooks, and hostel furniture scrap from students and PG owners near PGBT College Road.'
+      },
+      {
+        question: 'Can PG and hostel owners schedule a bulk clearance pickup?',
+        answer: 'Yes, PG and hostel owners can call or WhatsApp +91 8871600497 to schedule a bulk scrap clearance visit.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-housing-board-colony-bhopal', 'kabadiwala-nariyal-kheda-bhopal', 'kabadiwala-karond-bhopal']
+  },
+  {
+    slug: 'kabadiwala-housing-board-colony-bhopal',
+    path: '/kabadiwala-housing-board-colony-bhopal/',
+    name: 'Housing Board Colony (Nariyal Kheda)',
+    zoneCategory: 'Residential Colony',
+    shortDesc: 'Doorstep scrap pickup for Housing Board Colony flats and quarters near Nariyal Kheda, Bhopal.',
+    detailedContent: {
+      intro: 'Kabadiwala Bhopal serves Housing Board Colony residents near Nariyal Kheda with dependable doorstep scrap collection, covering newspapers, metal items, and old appliances.',
+      localityProfile: 'Housing Board Colony is a well-established government-developed residential layout of flats and quarters near Nariyal Kheda. Our team is familiar with the block-and-quarter numbering system, making pickup coordination simple for residents.',
+      primaryScrapFocus: [
+        'Newspapers, Magazines & School Books',
+        'Old Iron Grills, Almirahs & Bed Frames',
+        'Washing Machines, Fridges & Coolers',
+        'Plastic Buckets, Chairs & Storage Containers'
+      ],
+      pickupProcessText: 'Residents can share their block and quarter number for accurate doorstep dispatch; pickups are typically arranged within the same day.',
+      landmarksServed: ['Housing Board Colony Blocks', 'Nariyalkheda Bus Stop', 'Sharda Nagar Boundary', 'Rajeev Nagar Link']
+    },
+    metaTitle: 'Kabadiwala Housing Board Colony Bhopal | Scrap Buyer near Nariyal Kheda Bhopal',
+    metaDescription: 'Looking for Kabadiwala Housing Board Colony Bhopal? Get convenient scrap collection and doorstep pickup service for homes and quarters.',
+    faqs: [
+      {
+        question: 'Do you cover all blocks of Housing Board Colony near Nariyal Kheda?',
+        answer: 'Yes, we provide doorstep scrap pickup across all blocks and quarters of Housing Board Colony near Nariyal Kheda.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-nariyal-kheda-bhopal', 'kabadiwala-pgbt-college-bhopal', 'kabadiwala-karond-bhopal']
+  },
+  {
+    slug: 'kabadiwala-indrapuri-bhopal',
+    path: '/kabadiwala-indrapuri-bhopal/',
+    name: 'Indrapuri',
+    zoneCategory: 'Suburban & Housing Corridor',
+    shortDesc: 'Doorstep scrap collection for homes and shops in Indrapuri, Hoshangabad Road, Bhopal.',
+    detailedContent: {
+      intro: 'Kabadiwala Bhopal offers doorstep scrap pickup in Indrapuri along Hoshangabad Road, covering household raddi, metal scrap, and old appliances.',
+      localityProfile: 'Indrapuri is a well-settled residential locality along the Hoshangabad Road corridor, home to independent houses, apartments, and neighborhood shops. Our routes here connect smoothly with nearby Hoshangabad Road pickups.',
+      primaryScrapFocus: [
+        'Newspapers, Magazines & Old Books',
+        'Iron Grills, Gates & Steel Furniture',
+        'Old ACs, Coolers, Fridges & Electronics',
+        'Cartons, Plastic Ware & Household Scrap'
+      ],
+      pickupProcessText: 'Residents and shop owners in Indrapuri can call or WhatsApp to book a convenient pickup slot with transparent digital weighing.',
+      landmarksServed: ['Indrapuri Junction', 'Hoshangabad Road Link', 'Indrapuri Market Street']
+    },
+    metaTitle: 'Kabadiwala Indrapuri Bhopal | Scrap Buyer in Indrapuri Bhopal',
+    metaDescription: 'Looking for Kabadiwala Indrapuri Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Do you provide doorstep pickup in Indrapuri along Hoshangabad Road?',
+        answer: 'Yes, we cover Indrapuri and its surrounding streets along Hoshangabad Road for doorstep scrap collection.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-hoshangabad-road-bhopal', 'kabadiwala-bagh-sewania-bhopal']
+  },
+  {
+    slug: 'kabadiwala-piplani-bhopal',
+    path: '/kabadiwala-piplani-bhopal/',
+    name: 'Piplani',
+    zoneCategory: 'Residential Colony',
+    shortDesc: 'Doorstep scrap pickup for BHEL township sectors and shops in Piplani, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap collection in Piplani Bhopal, covering BHEL township sectors, local markets, and independent homes.',
+      localityProfile: 'Piplani is a large residential township adjoining the BHEL manufacturing belt, with numbered sectors, quarters, and a busy local market. We coordinate sector-wise pickup routes for quick service.',
+      primaryScrapFocus: [
+        'Newspapers, Magazines & Books',
+        'Old Steel Furniture & Iron Grills',
+        'Washing Machines, Fridges & Electronics',
+        'Plastic Ware & Household Scrap'
+      ],
+      pickupProcessText: 'Residents can mention their sector number for prompt doorstep dispatch across Piplani.',
+      landmarksServed: ['Piplani Sector Market', 'BHEL Township Gate', 'Piplani Bus Stand']
+    },
+    metaTitle: 'Kabadiwala Piplani Bhopal | Scrap Buyer in Piplani Bhopal',
+    metaDescription: 'Looking for Kabadiwala Piplani Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Do you cover all sectors of Piplani township?',
+        answer: 'Yes, we provide doorstep scrap pickup across all residential sectors of Piplani.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-govindpura-industrial-area-bhopal', 'kabadiwala-ayodhya-nagar-bhopal']
+  },
+  {
+    slug: 'kabadiwala-ashoka-garden-bhopal',
+    path: '/kabadiwala-ashoka-garden-bhopal/',
+    name: 'Ashoka Garden',
+    zoneCategory: 'Residential Colony',
+    shortDesc: 'Doorstep household scrap pickup for homes and shops in Ashoka Garden, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap collection in Ashoka Garden Bhopal, serving residential streets and neighborhood shops with clean, punctual pickup.',
+      localityProfile: 'Ashoka Garden is a well-established residential locality near the Bhopal railway station belt, with a mix of homes, small shops, and workshops. Our local routes ensure quick response times.',
+      primaryScrapFocus: ['Newspapers, Magazines & Books', 'Iron Grills & Metal Utensils', 'Old Electronics & Appliances'],
+      pickupProcessText: 'Call or WhatsApp to schedule a doorstep pickup anywhere in Ashoka Garden.',
+      landmarksServed: ['Ashoka Garden Main Road', 'Railway Station Vicinity', 'Ashoka Garden Market']
+    },
+    metaTitle: 'Kabadiwala Ashoka Garden Bhopal | Scrap Buyer in Ashoka Garden Bhopal',
+    metaDescription: 'Looking for Kabadiwala Ashoka Garden Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Is doorstep pickup available in Ashoka Garden?',
+        answer: 'Yes, we offer doorstep scrap collection across residential streets and shops in Ashoka Garden.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-jehangirabad-bhopal', 'kabadiwala-jinsi-bhopal']
+  },
+  {
+    slug: 'kabadiwala-tt-nagar-bhopal',
+    path: '/kabadiwala-tt-nagar-bhopal/',
+    name: 'TT Nagar',
+    zoneCategory: 'Commercial & Office Hub',
+    shortDesc: 'Scrap collection for government offices, shops, and residences in TT Nagar, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap pickup for government offices, showrooms, and residential quarters in TT Nagar (Tatya Tope Nagar), Bhopal.',
+      localityProfile: 'TT Nagar is Bhopal’s administrative and stadium district, home to government offices, showrooms, and residential quarters. We handle office paper shredding, furniture, and household scrap smoothly.',
+      primaryScrapFocus: [
+        'Office Paper Files & Bulk Shredding',
+        'Old Furniture, Cabinets & Fixtures',
+        'Showroom Packaging & Metal Scrap',
+        'Household Raddi & Electronics'
+      ],
+      pickupProcessText: 'Offices and residents in TT Nagar can schedule a convenient pickup slot via call or WhatsApp.',
+      landmarksServed: ['TT Nagar Stadium Area', 'Roshanpura Square', 'Sethi Nagar Link']
+    },
+    metaTitle: 'Kabadiwala TT Nagar Bhopal | Scrap Buyer in TT Nagar Bhopal',
+    metaDescription: 'Looking for Kabadiwala TT Nagar Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Do you collect office paper and furniture scrap in TT Nagar?',
+        answer: 'Yes, we collect bulk office paper, furniture, and fixture scrap from government and commercial offices in TT Nagar.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-new-market-bhopal', 'kabadiwala-kamla-park-bhopal']
+  },
+  {
+    slug: 'kabadiwala-new-market-bhopal',
+    path: '/kabadiwala-new-market-bhopal/',
+    name: 'New Market',
+    zoneCategory: 'Commercial & Office Hub',
+    shortDesc: 'Doorstep scrap pickup for retail shops, showrooms, and offices in New Market, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap collection for retail traders, showrooms, and nearby residences in New Market, Bhopal.',
+      localityProfile: 'New Market is one of Bhopal’s established commercial centers, with retail shops, showrooms, restaurants, and offices generating steady packaging and paper scrap.',
+      primaryScrapFocus: ['Retail Packaging Cartons & Paper', 'Showroom Metal Fixtures & Fittings', 'Office Paper & E-Waste'],
+      pickupProcessText: 'Traders and offices can schedule evening pickups to avoid daytime market rush in New Market.',
+      landmarksServed: ['New Market Main Square', 'Shahpura Link Road', 'Roshanpura Crossing']
+    },
+    metaTitle: 'Kabadiwala New Market Bhopal | Scrap Buyer in New Market Bhopal',
+    metaDescription: 'Looking for Kabadiwala New Market Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Do you offer evening pickup for shops in New Market?',
+        answer: 'Yes, we schedule evening or early morning pickups for shops and showrooms in New Market to avoid market rush hours.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-tt-nagar-bhopal', 'kabadiwala-shahpura-bhopal']
+  },
+  {
+    slug: 'kabadiwala-awadhpuri-bhopal',
+    path: '/kabadiwala-awadhpuri-bhopal/',
+    name: 'Awadhpuri',
+    zoneCategory: 'Residential Colony',
+    shortDesc: 'Doorstep household scrap pickup for homes near Awadhpuri, Karond-Bagsewania belt, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap collection for households and small shops in Awadhpuri Bhopal.',
+      localityProfile: 'Awadhpuri is a growing residential locality with independent homes, small apartment blocks, and neighborhood shops. We provide regular local pickup routes here.',
+      primaryScrapFocus: ['Newspapers & Household Raddi', 'Iron Grills & Metal Scrap', 'Plastic Ware & Old Electronics'],
+      pickupProcessText: 'Call or WhatsApp to book a doorstep pickup slot in Awadhpuri.',
+      landmarksServed: ['Awadhpuri Main Road', 'Nearby Residential Streets']
+    },
+    metaTitle: 'Kabadiwala Awadhpuri Bhopal | Scrap Buyer in Awadhpuri Bhopal',
+    metaDescription: 'Looking for Kabadiwala Awadhpuri Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Is doorstep scrap pickup available in Awadhpuri?',
+        answer: 'Yes, we provide regular doorstep scrap collection for homes and shops in Awadhpuri.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-karond-bhopal', 'kabadiwala-ayodhya-nagar-bhopal']
+  },
+  {
+    slug: 'kabadiwala-bawadiya-kalan-bhopal',
+    path: '/kabadiwala-bawadiya-kalan-bhopal/',
+    name: 'Bawadiya Kalan',
+    zoneCategory: 'Suburban & Housing Corridor',
+    shortDesc: 'Doorstep scrap collection for apartments, bungalows, and shops in Bawadiya Kalan, Bhopal.',
+    detailedContent: {
+      intro: 'Doorstep scrap pickup in Bawadiya Kalan Bhopal, covering apartment societies, independent bungalows, and neighborhood shops.',
+      localityProfile: 'Bawadiya Kalan is a rapidly developing residential locality near Hoshangabad Road and Ayodhya Bypass, popular for gated apartment societies and bungalow colonies.',
+      primaryScrapFocus: [
+        'Household Paper Raddi & Cartons',
+        'Old Appliances: ACs, Fridges & Washing Machines',
+        'Iron Grills, Gates & Metal Fittings'
+      ],
+      pickupProcessText: 'Society residents and homeowners can schedule a doorstep pickup with our local Bawadiya Kalan route team.',
+      landmarksServed: ['Bawadiya Kalan Main Road', 'Ayodhya Bypass Link', 'Nearby Apartment Societies']
+    },
+    metaTitle: 'Kabadiwala Bawadiya Kalan Bhopal | Scrap Buyer in Bawadiya Kalan Bhopal',
+    metaDescription: 'Looking for Kabadiwala Bawadiya Kalan Bhopal? Get convenient scrap collection and doorstep pickup service for homes and offices.',
+    faqs: [
+      {
+        question: 'Do you cover apartment societies in Bawadiya Kalan?',
+        answer: 'Yes, we provide doorstep scrap pickup for gated apartment societies and bungalow colonies in Bawadiya Kalan.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-ayodhya-nagar-bhopal', 'kabadiwala-hoshangabad-road-bhopal']
+  },
+  {
+    slug: 'kabadiwala-mandideep-industrial-area-bhopal',
+    path: '/kabadiwala-mandideep-industrial-area-bhopal/',
+    name: 'Mandideep Industrial Area',
+    zoneCategory: 'Industrial & Manufacturing',
+    shortDesc: 'Bulk industrial scrap buying and factory clearance services for Mandideep Industrial Area near Bhopal.',
+    detailedContent: {
+      intro: 'Kabadiwala Bhopal extends bulk industrial scrap buying and factory clearance services to units in the Mandideep Industrial Area near Bhopal.',
+      localityProfile: 'Mandideep is a major industrial belt near Bhopal, home to manufacturing plants, pharmaceutical units, and engineering factories. We provide truck-based collection for heavy metal, machinery, and packaging scrap.',
+      primaryScrapFocus: [
+        'Heavy Structural Iron & Machinery Scrap',
+        'Copper, Aluminum & Electrical Cable Scrap',
+        'Industrial Packaging Drums & Cartons',
+        'Factory Offcuts & Fabrication Waste'
+      ],
+      pickupProcessText: 'Factory managers can request a site visit for evaluation; we bring heavy transport and manpower for bulk industrial clearance.',
+      landmarksServed: ['Mandideep Industrial Estate', 'Bhopal-Mandideep Highway Belt', 'Pharma & Engineering Units']
+    },
+    metaTitle: 'Kabadiwala Mandideep Industrial Area Bhopal | Scrap Buyer in Mandideep Bhopal',
+    metaDescription: 'Looking for Kabadiwala Mandideep Industrial Area Bhopal? Get convenient scrap collection and doorstep pickup service for factories and offices.',
+    faqs: [
+      {
+        question: 'Do you provide bulk industrial scrap pickup in Mandideep?',
+        answer: 'Yes, we provide bulk industrial scrap buying and factory clearance services for units in Mandideep Industrial Area.'
+      }
+    ],
+    neighborSlugs: ['kabadiwala-govindpura-industrial-area-bhopal', 'kabadiwala-piplani-bhopal']
   }
 ];
