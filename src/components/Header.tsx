@@ -32,6 +32,47 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
 
   return (
     <header className="w-full sticky top-0 z-40 bg-white border-b border-[#E4E0D8] shadow-2xs">
+      {/* Auto-scrolling Notice Bar */}
+      <div className="bg-[#FCE9A8] border-b border-[#E9B949] flex items-center gap-2 px-2 sm:px-4">
+        <style>
+          {`
+            @keyframes marquee-scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .marquee-track {
+              display: inline-block;
+              animation: marquee-scroll 26s linear infinite;
+            }
+            .marquee-track:hover {
+              animation-play-state: paused;
+            }
+          `}
+        </style>
+        <div className="flex-1 overflow-hidden whitespace-nowrap py-1.5">
+          <div className="marquee-track">
+            <span className="inline-block px-8 text-[12.5px] sm:text-[13px] font-semibold text-[#6B4E00]">
+              ⚠️ Note: Pickup service is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
+            </span>
+            <span className="inline-block px-8 text-[12.5px] sm:text-[13px] font-semibold text-[#6B4E00]" aria-hidden="true">
+              ⚠️ Note: Pickup service is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
+            </span>
+          </div>
+        </div>
+
+        <a
+          href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+            'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:inline-flex items-center gap-1.5 shrink-0 px-2.5 py-1 my-1 text-[11.5px] font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] rounded-md shadow-xs transition-colors whitespace-nowrap"
+        >
+          <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+          <span>Send Details on WhatsApp</span>
+        </a>
+      </div>
+
       {/* Slim, Elegant Top Bar */}
       <div className="bg-[#F7F5F0] border-b border-[#E4E0D8] text-[13px] py-1.5 px-4 text-[#66737D]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -113,7 +154,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
           </a>
 
           <a
-            href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Kabadiwala Bhopal, I want to book a scrap pickup.')}`}
+            href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+              'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 text-[11px] xl:text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] rounded-md transition-all shadow-xs whitespace-nowrap shrink-0"
@@ -199,7 +242,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
                 <span>Call Now</span>
               </a>
               <a
-                href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Kabadiwala Bhopal, I want to book a scrap pickup.')}`}
+                href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+                  'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 px-3 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] rounded-md flex items-center justify-center gap-1.5 shadow-xs transition-colors"

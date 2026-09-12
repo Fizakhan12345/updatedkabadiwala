@@ -20,7 +20,9 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [locality, setLocality] = useState(defaultLocality);
+  const [address, setAddress] = useState('');
   const [scrapType, setScrapType] = useState('Paper & Raddi');
+  const [quantity, setQuantity] = useState('');
   const [preferredDate, setPreferredDate] = useState('');
   const [notes, setNotes] = useState('');
 
@@ -31,7 +33,7 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !phone || !locality) return;
+    if (!fullName || !phone || !locality || !quantity) return;
 
     const generatedRef = `KB-${Math.floor(100000 + Math.random() * 900000)}`;
     setRefId(generatedRef);
@@ -44,7 +46,9 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
         fullName,
         phone,
         locality,
+        address,
         scrapType,
+        quantity,
         preferredDate,
         notes
       })
@@ -58,16 +62,19 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
     `Ref ID: ${refId}\n` +
     `Name: ${fullName}\n` +
     `Phone: ${phone}\n` +
-    `Locality: ${locality}\n` +
-    `Scrap Category: ${scrapType}\n` +
+    `Item Details: ${scrapType}\n` +
+    `Quantity: ${quantity}\n` +
     `Preferred Date: ${preferredDate || 'Earliest Available'}\n` +
-    `Details: ${notes || 'None'}`
+    `Address: ${address ? `${address}, ` : ''}${locality}\n` +
+    `Additional Notes: ${notes || 'None'}`
   );
 
   const resetForm = () => {
     setSubmitted(false);
     setFullName('');
     setPhone('');
+    setAddress('');
+    setQuantity('');
     setNotes('');
   };
 
@@ -93,6 +100,13 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
           >
             <X className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Notice: minimum quantity requirement */}
+        <div className="bg-[#FCE9A8] border-b border-[#E9B949] px-4 sm:px-5 py-2">
+          <p className="text-[11.5px] font-semibold text-[#6B4E00] leading-snug">
+            ⚠️ Pickup is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms.
+          </p>
         </div>
 
         {/* Content Body */}
@@ -148,10 +162,24 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
                 </select>
               </div>
 
+              {/* Full Address */}
+              <div>
+                <label className="block text-xs font-semibold text-[#1F2933] mb-1">
+                  Full Address (House No., Street, Landmark)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. House 12, Near Ravindra Bhawan"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-[#E4E0D8] rounded-md focus:border-[#244E70] focus:ring-1 focus:ring-[#244E70] outline-none"
+                />
+              </div>
+
               {/* Scrap Category */}
               <div>
                 <label className="block text-xs font-semibold text-[#1F2933] mb-1">
-                  Scrap Category
+                  Scrap Category / Item Details
                 </label>
                 <select
                   value={scrapType}
@@ -165,6 +193,24 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
                   <option value="Office & Commercial Scrap">Office & Commercial Scrap</option>
                   <option value="Industrial Factory Scrap">Industrial Factory Scrap</option>
                 </select>
+              </div>
+
+              {/* Quantity */}
+              <div>
+                <label className="block text-xs font-semibold text-[#1F2933] mb-1">
+                  Approximate Quantity <span className="text-[#E56B4F]">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. 60 kg paper, or 3 old iron chairs"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-[#E4E0D8] rounded-md focus:border-[#244E70] focus:ring-1 focus:ring-[#244E70] outline-none"
+                />
+                <p className="text-[10.5px] text-[#66737D] mt-1">
+                  Note: Paper/raddi requires a minimum of 50 kg for pickup.
+                </p>
               </div>
 
               {/* Preferred Date */}
@@ -184,11 +230,11 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
               {/* Additional Details */}
               <div>
                 <label className="block text-xs font-semibold text-[#1F2933] mb-1">
-                  Scrap Details / Message (Optional)
+                  Additional Notes / Message (Optional)
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="e.g. Approx 50 kg old newspapers and 1 discarded cooler"
+                  placeholder="e.g. Please call before arriving"
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   className="w-full px-3 py-2 text-sm border border-[#E4E0D8] rounded-md focus:border-[#244E70] focus:ring-1 focus:ring-[#244E70] outline-none"
@@ -225,8 +271,10 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
               <div className="bg-[#F7F5F0] border border-[#E4E0D8] rounded-lg p-3 text-left text-xs text-[#1F2933] space-y-1">
                 <p className="font-semibold text-[#244E70]">Summary of your request:</p>
                 <p><span className="text-[#66737D]">Name:</span> {fullName}</p>
-                <p><span className="text-[#66737D]">Locality:</span> {locality}</p>
-                <p><span className="text-[#66737D]">Scrap Type:</span> {scrapType}</p>
+                <p><span className="text-[#66737D]">Item Details:</span> {scrapType}</p>
+                <p><span className="text-[#66737D]">Quantity:</span> {quantity}</p>
+                <p><span className="text-[#66737D]">Preferred Date:</span> {preferredDate || 'Earliest Available'}</p>
+                <p><span className="text-[#66737D]">Address:</span> {address ? `${address}, ` : ''}{locality}</p>
               </div>
 
               <p className="text-xs text-[#66737D]">
