@@ -66,7 +66,8 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
     `Quantity: ${quantity}\n` +
     `Preferred Date: ${preferredDate || 'Earliest Available'}\n` +
     `Address: ${address ? `${address}, ` : ''}${locality}\n` +
-    `Additional Notes: ${notes || 'None'}`
+    `Additional Notes: ${notes || 'None'}\n\n` +
+    `(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)`
   );
 
   const resetForm = () => {
@@ -105,7 +106,7 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
         {/* Notice: minimum quantity requirement */}
         <div className="bg-[#FCE9A8] border-b border-[#E9B949] px-4 sm:px-5 py-2">
           <p className="text-[11.5px] font-semibold text-[#6B4E00] leading-snug">
-            ⚠️ Pickup is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms.
+            ⚠️ Pickup service available only for bulk quantities — Paper & Raddi: minimum 50 kg | Plastic: minimum 30 kg.
           </p>
         </div>
 
@@ -187,6 +188,7 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
                   className="w-full px-3 py-2 text-sm border border-[#E4E0D8] rounded-md focus:border-[#244E70] focus:ring-1 focus:ring-[#244E70] outline-none bg-white"
                 >
                   <option value="Paper & Newspaper Raddi">Paper & Newspaper Raddi</option>
+                  <option value="Plastic Scrap">Plastic Scrap</option>
                   <option value="Metals (Iron, Steel, Copper, Brass, Aluminum)">Metals (Iron, Steel, Copper, Brass, Aluminum)</option>
                   <option value="Electronics & E-Waste">Electronics & E-Waste</option>
                   <option value="Household Appliances (AC, Fridge, Washing Machine, Cooler)">Household Appliances (AC, Fridge, Washing Machine, Cooler)</option>
@@ -209,7 +211,7 @@ export const PickupRequestModal: React.FC<PickupRequestModalProps> = ({
                   className="w-full px-3 py-2 text-sm border border-[#E4E0D8] rounded-md focus:border-[#244E70] focus:ring-1 focus:ring-[#244E70] outline-none"
                 />
                 <p className="text-[10.5px] text-[#66737D] mt-1">
-                  Note: Paper/raddi requires a minimum of 50 kg for pickup.
+                  Note: Paper & Raddi requires a minimum of 50 kg, Plastic requires a minimum of 30 kg for pickup.
                 </p>
               </div>
 

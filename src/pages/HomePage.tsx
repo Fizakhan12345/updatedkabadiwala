@@ -103,7 +103,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onRequestPickup 
                 </a>
 
                 <a
-                  href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Kabadiwala Bhopal, I want to book a scrap pickup.')}`}
+                  href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+                    'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm sm:text-base rounded-md transition-all shadow-md flex items-center gap-2"
@@ -664,7 +666,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onRequestPickup 
                   <div>
                     <span className="text-[11px] text-[#128C7E] block font-bold">WhatsApp Direct</span>
                     <a
-                      href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Kabadiwala Bhopal, I want to book a scrap pickup.')}`}
+                      href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+                        'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-bold text-base text-[#128C7E] hover:underline"

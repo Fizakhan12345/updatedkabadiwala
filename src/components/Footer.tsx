@@ -232,7 +232,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </h4>
             <div className="flex items-center gap-2">
               <a
-                href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Kabadiwala Bhopal, I want to book a scrap pickup.')}`}
+                href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+                  'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"

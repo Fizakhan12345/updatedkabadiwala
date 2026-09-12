@@ -34,7 +34,7 @@ export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({ onRequestPickup 
 
   const handleSend = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    const messageToSend = customMessage.trim() || 'Hello Kabadiwala Bhopal, I want to book a scrap pickup at my doorstep.';
+    const messageToSend = customMessage.trim() || 'Hello Kabadiwala Bhopal, I want to book a scrap pickup at my doorstep.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)';
     const url = `https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(messageToSend)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -123,7 +123,7 @@ export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({ onRequestPickup 
               <div className="flex flex-col gap-1.5">
                 <button
                   type="button"
-                  onClick={() => handleQuickReply('Hello Kabadiwala Bhopal, I want to book a scrap pickup at my doorstep.')}
+                  onClick={() => handleQuickReply('Hello Kabadiwala Bhopal, I want to book a scrap pickup at my doorstep.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)')}
                   className="text-left bg-white hover:bg-[#F7F5F0] text-[#244E70] font-semibold p-2 rounded-lg border border-[#E4E0D8] shadow-2xs transition-colors flex items-center justify-between"
                 >
                   <span>📦 Book Household Scrap Pickup</span>
@@ -131,7 +131,7 @@ export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({ onRequestPickup 
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleQuickReply('Hello, please send me today scrap rates for paper, metal, and plastic.')}
+                  onClick={() => handleQuickReply('Hello, please send me today scrap rates for paper, metal, and plastic.\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)')}
                   className="text-left bg-white hover:bg-[#F7F5F0] text-[#244E70] font-semibold p-2 rounded-lg border border-[#E4E0D8] shadow-2xs transition-colors flex items-center justify-between"
                 >
                   <span>💰 Check Today's Scrap Rates</span>
@@ -139,7 +139,7 @@ export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({ onRequestPickup 
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleQuickReply('Hello, we have office paper files & commercial scrap in Bhopal for bulk pickup.')}
+                  onClick={() => handleQuickReply('Hello, we have office paper files & commercial scrap in Bhopal for bulk pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)')}
                   className="text-left bg-white hover:bg-[#F7F5F0] text-[#244E70] font-semibold p-2 rounded-lg border border-[#E4E0D8] shadow-2xs transition-colors flex items-center justify-between"
                 >
                   <span>🏢 Office / Factory Scrap Request</span>

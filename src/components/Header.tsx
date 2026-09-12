@@ -52,17 +52,17 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
         <div className="flex-1 overflow-hidden whitespace-nowrap py-1.5">
           <div className="marquee-track">
             <span className="inline-block px-8 text-[12.5px] sm:text-[13px] font-semibold text-[#6B4E00]">
-              ⚠️ Note: Pickup service is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
+              ⚠️ Note: Pickup service available for bulk quantities only — Paper &amp; Raddi: minimum 50 kg | Metals (Iron, Steel, Copper, Brass, Aluminum): minimum 20 kg | E-waste &amp; Electronics: minimum 5 kg or 2+ items | Home Appliances (AC, Fridge, Washing Machine, Cooler): 1 unit minimum | Office/Industrial Scrap: bulk pickup only. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
             </span>
             <span className="inline-block px-8 text-[12.5px] sm:text-[13px] font-semibold text-[#6B4E00]" aria-hidden="true">
-              ⚠️ Note: Pickup service is available only for bulk quantities — Paper: minimum 50 kg required | Metal, E-waste &amp; other scrap: quantity as per category norms. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
+              ⚠️ Note: Pickup service available for bulk quantities only — Paper &amp; Raddi: minimum 50 kg | Metals (Iron, Steel, Copper, Brass, Aluminum): minimum 20 kg | E-waste &amp; Electronics: minimum 5 kg or 2+ items | Home Appliances (AC, Fridge, Washing Machine, Cooler): 1 unit minimum | Office/Industrial Scrap: bulk pickup only. Send us a message on WhatsApp with your item details, quantity, preferred date, and address to book a pickup.
             </span>
           </div>
         </div>
 
         <a
           href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
-            'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+            'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -155,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
 
           <a
             href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
-              'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+              'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -243,7 +243,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
               </a>
               <a
                 href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
-                  'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:'
+                  'Hello Kabadiwala Bhopal, I want to book a scrap pickup.\nItem details:\nQuantity:\nPreferred pickup date & time:\nAddress:\nAdditional notes:\n\n(Note: Pickup service available only for bulk quantities - Paper & Raddi: min 50 kg | Plastic: min 30 kg)'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
