@@ -14,6 +14,9 @@ import { HowItWorksPage } from './pages/HowItWorksPage';
 import { AboutPage } from './pages/AboutPage';
 import { FAQPage } from './pages/FAQPage';
 import { ContactPage } from './pages/ContactPage';
+import { ScrapDealerDetailPage } from './pages/ScrapDealerDetailPage';
+import { ScrapDealersHubPage } from './pages/ScrapDealersHubPage';
+import { SCRAP_DEALERS } from './data/scrapDealers';
 
 import { LOCALITIES } from './data/localities';
 import { SeoHead } from './components/SeoHead';
@@ -106,6 +109,14 @@ export default function App() {
         />
       );
     }
+    if (path === '/scrap-dealers/' || path === '/scrap-dealers') {
+  return (
+    <ScrapDealersHubPage
+      onNavigate={handleNavigate}
+      onRequestPickup={() => handleOpenPickupModal()}
+    />
+  );
+}
 
     if (path === '/how-it-works/' || path === '/how-it-works') {
       return (
@@ -151,6 +162,18 @@ export default function App() {
         />
       );
     }
+    // Check scrap dealer pages (16 category URLs)
+const matchedDealer = SCRAP_DEALERS.find((d) => d.slug === cleanSlug);
+
+if (matchedDealer) {
+  return (
+    <ScrapDealerDetailPage
+      dealer={matchedDealer}
+      onNavigate={handleNavigate}
+      onRequestPickup={() => handleOpenPickupModal()}
+    />
+  );
+}
 
     // 404 Fallback
     return (

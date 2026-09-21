@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Menu, X, Truck, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Menu, X, Truck, ArrowRight, ChevronDown } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { BUSINESS_INFO } from '../data/business';
+import { SCRAP_DEALERS } from '../data/scrapDealers';
 import logoSvg from '../assets/logo.svg';
 
 interface HeaderProps {
@@ -12,11 +13,17 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onRequestPickup }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dealersDropdownOpen, setDealersDropdownOpen] = useState(false);
+  const [mobileDealersOpen, setMobileDealersOpen] = useState(false);
 
-  const navLinks = [
+  // Split so "We Collect" dropdown can be inserted after "Scrap Categories"
+  const navLinksBefore = [
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services/' },
     { label: 'Scrap Categories', path: '/scrap-categories/' },
+  ];
+
+  const navLinksAfter = [
     { label: 'Areas We Serve', path: '/areas-we-serve/' },
     { label: 'How It Works', path: '/how-it-works/' },
     { label: 'About', path: '/about/' },
@@ -24,11 +31,18 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
     { label: 'Contact', path: '/contact/' },
   ];
 
+  const navLinks = [...navLinksBefore, ...navLinksAfter];
+
   const handleLinkClick = (path: string, e: React.MouseEvent) => {
     e.preventDefault();
     onNavigate(path);
     setMobileMenuOpen(false);
+    setDealersDropdownOpen(false);
+    setMobileDealersOpen(false);
   };
+
+  const isDealersActive = currentPath.startsWith('/scrap-dealers/') ||
+    SCRAP_DEALERS.some((d) => currentPath === d.path);
 
   return (
     <header className="w-full sticky top-0 z-40 bg-white border-b border-[#E4E0D8] shadow-2xs">
@@ -124,7 +138,68 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
 
         {/* Desktop Nav Links */}
         <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1 2xl:gap-2 shrink-0">
-          {navLinks.map((link) => {
+          {navLinksBefore.map((link) => {
+            const isActive = currentPath === link.path || (link.path !== '/' && currentPath.startsWith(link.path));
+            return (
+              <a
+                key={link.path}
+                href={link.path}
+                onClick={(e) => handleLinkClick(link.path, e)}
+                className={`whitespace-nowrap px-1.5 xl:px-2 2xl:px-3 py-1.5 text-[11.5px] xl:text-[13px] 2xl:text-sm font-medium rounded-md transition-colors ${
+                  isActive
+                    ? 'text-[#244E70] bg-[#F7F5F0] font-semibold'
+                    : 'text-[#1F2933] hover:text-[#244E70] hover:bg-[#F7F5F0]'
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+
+          {/* "We Collect" Dropdown - Desktop */}
+          <div
+            className="relative"
+            onMouseEnter={() => setDealersDropdownOpen(true)}
+            onMouseLeave={() => setDealersDropdownOpen(false)}
+          >
+            <button
+              className={`flex items-center gap-0.5 whitespace-nowrap px-1.5 xl:px-2 2xl:px-3 py-1.5 text-[11.5px] xl:text-[13px] 2xl:text-sm font-medium rounded-md transition-colors cursor-pointer ${
+                isDealersActive
+                  ? 'text-[#244E70] bg-[#F7F5F0] font-semibold'
+                  : 'text-[#1F2933] hover:text-[#244E70] hover:bg-[#F7F5F0]'
+              }`}
+              onClick={() => setDealersDropdownOpen((prev) => !prev)}
+              aria-haspopup="true"
+              aria-expanded={dealersDropdownOpen}
+            >
+              <span>We Collect</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${dealersDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {dealersDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-72 bg-white border border-[#E4E0D8] rounded-lg shadow-lg py-2 z-50 max-h-[26rem] overflow-y-auto">
+                <a
+                  href="/scrap-dealers/"
+                  onClick={(e) => handleLinkClick('/scrap-dealers/', e)}
+                  className="block px-4 py-2 text-xs font-bold text-[#244E70] border-b border-[#E4E0D8] mb-1 hover:bg-[#F7F5F0] transition-colors"
+                >
+                  View All Scrap Categories
+                </a>
+                {SCRAP_DEALERS.map((dealer) => (
+                  <a
+                    key={dealer.slug}
+                    href={dealer.path}
+                    onClick={(e) => handleLinkClick(dealer.path, e)}
+                    className="block px-4 py-2 text-xs text-[#1F2933] hover:bg-[#F7F5F0] hover:text-[#244E70] transition-colors"
+                  >
+                    {dealer.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {navLinksAfter.map((link) => {
             const isActive = currentPath === link.path || (link.path !== '/' && currentPath.startsWith(link.path));
             return (
               <a
@@ -203,7 +278,63 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate, onReque
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-[#E4E0D8] px-4 pt-2 pb-6 space-y-3">
           <div className="space-y-1">
-            {navLinks.map((link) => {
+            {navLinksBefore.map((link) => {
+              const isActive = currentPath === link.path;
+              return (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={(e) => handleLinkClick(link.path, e)}
+                  className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'bg-[#244E70] text-white font-semibold'
+                      : 'text-[#1F2933] hover:bg-[#F7F5F0]'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+
+            {/* "We Collect" Accordion - Mobile */}
+            <div>
+              <button
+                onClick={() => setMobileDealersOpen((prev) => !prev)}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                  isDealersActive
+                    ? 'bg-[#244E70] text-white font-semibold'
+                    : 'text-[#1F2933] hover:bg-[#F7F5F0]'
+                }`}
+                aria-expanded={mobileDealersOpen}
+              >
+                <span>We Collect</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileDealersOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {mobileDealersOpen && (
+                <div className="mt-1 ml-2 pl-3 border-l-2 border-[#E4E0D8] space-y-0.5 max-h-72 overflow-y-auto">
+                  <a
+                    href="/scrap-dealers/"
+                    onClick={(e) => handleLinkClick('/scrap-dealers/', e)}
+                    className="block px-3 py-2 rounded-md text-xs font-bold text-[#244E70] hover:bg-[#F7F5F0]"
+                  >
+                    View All Scrap Categories
+                  </a>
+                  {SCRAP_DEALERS.map((dealer) => (
+                    <a
+                      key={dealer.slug}
+                      href={dealer.path}
+                      onClick={(e) => handleLinkClick(dealer.path, e)}
+                      className="block px-3 py-2 rounded-md text-xs text-[#1F2933] hover:bg-[#F7F5F0] hover:text-[#244E70]"
+                    >
+                      {dealer.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navLinksAfter.map((link) => {
               const isActive = currentPath === link.path;
               return (
                 <a
